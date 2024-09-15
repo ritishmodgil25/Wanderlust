@@ -1,5 +1,4 @@
 # Wanderlust
-# Wanderlust
 
 Wanderlust is a web application designed to help users explore and book various types of listings. It features a variety of categories including rooms, mountains, castles, pools, beaches, and cities. Users can view detailed information about each listing, read reviews, and filter listings based on their preferences.
 
