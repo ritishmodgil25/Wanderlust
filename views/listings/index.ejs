@@ -1,0 +1,108 @@
+<%- layout("layouts/boilerplate.ejs")%>
+
+    <body>
+
+
+        <div id="filter" class="row">
+            <div class="col-lg-1 col-md-4 col-sm-4">
+
+                <a href="/listings?category=Trending">
+
+                    <div class="filter">
+                        <div><i class="fa-solid fa-fire"></i></div>
+                        <p>Trending</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-1 col-md-4 col-sm-4">
+                <a href="/listings?category=Rooms">
+
+                    <div class="filter">
+                        <div><i class="fa-solid fa-bed"></i></div>
+                        <p>Rooms</p>
+                    </div>
+                </a>
+
+            </div>
+            <div class="col-lg-1 col-md-4 col-sm-4">
+                <a href="/listings?category=Mountains">
+
+                    <div class="filter">
+                        <div><i class="fa-solid fa-mountain"></i></div>
+                        <p>Mountains</p>
+                    </div>
+                </a>
+
+            </div>
+            <div class="col-lg-1 col-md-4 col-sm-4">
+
+                <a href="/listings?category=Castle">
+
+                    <div class="filter">
+                        <div><i class="fa-brands fa-fort-awesome"></i></div>
+                        <p>Castles</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-1 col-md-4 col-sm-4">
+
+
+                <a href="/listings?category=Pools">
+
+                    <div class="filter">
+                        <div><i class="fa-solid fa-person-swimming"></i></div>
+                        <p>Arctic pools</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-1 col-md-4 col-sm-4">
+                <a href="/listings?category=Beach">
+
+                    <div class="filter">
+                        <div><i class="fa-solid fa-umbrella-beach"></i></div>
+                        <p>Beach side</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class=" col-lg-1 col-md-4 col-sm-4">
+
+                <a href="/listings?category=Cities">
+
+
+                    <div class="filter">
+                        <div><i class="fa-solid fa-city"></i></div>
+                        <p>Top cities</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="allListing-list">
+            <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 ">
+
+                <% for(list of listings){%>
+                    <a href="listings/<%=list.id%>" class="listing-link">
+
+                        <div class="card card-home">
+                            <img class="card-img-top" src="<%=list.image.url%>" style="height:20rem">
+                            <div class="card-body card-body-home">
+                                <p class="card-title index-title">
+                                    <b> <%=list.title%></b>
+                                </p>
+                                <p class="card-text">
+                                    &#8377;
+                                    <%=list.price.toLocaleString("en-IN")%>/night
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </a>
+                    <% }%>
+            </div>
+        </div>
+    </body>

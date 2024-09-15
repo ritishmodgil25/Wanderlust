@@ -1,0 +1,116 @@
+<%layout('layouts/boilerplate')-%>
+
+    <br>
+    <div class="row ">
+        <div class="col-8 offset-2">
+
+            <h3><u>Create new listing</u></h3>
+
+            <form method="POST" class="needs-validation" action="/listings" enctype="multipart/form-data" novalidate>
+
+                <div class="form-group">
+                    <label for="title" class="form-label">Title</label>
+                    <input class="form-control" name="listing[title]" required placeholder="enter title" id="title">
+                    <div class="invalid-feedback">
+                        Please provide a valid input
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" name="listing[description]" required placeholder="enter description" id="description" rows="4"></textarea>
+                    <div class="invalid-feedback">
+                        Please provide a valid input
+                    </div>
+                </div>
+                <!-- 
+                <label for="image" class="form-label">Image</label>
+                <input class="form-control" name="listing[image][url]" placeholder="enter image URL/link" id="image"> -->
+
+                <label class="form-label">Image</label>
+                <input class="form-control" name="listing[image][url]" type="file">
+
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="location" class="form-label">Location</label>
+                            <input class="form-control" name="listing[location]" required placeholder="enter location" id="location">
+                            <div class="invalid-feedback">
+                                Please provide a valid input
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="country" class="form-label">Country</label>
+                            <input class="form-control" name="listing[country]" required placeholder="enter country" id="country">
+                            <div class="invalid-feedback">
+                                Please provide a valid input
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="listing[category]">Choose a category</label>
+                            <div class="dropdown">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Select
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#" data-value="Rooms">Rooms</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="Mountains">Mountains</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="Castle">Castle</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="Pools">Pools</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="Beach">Beach Side</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="Cities">Top cities</a></li>
+                                </ul>
+                            </div>
+                            <input type="hidden" name="listing[category]" id="category" required>
+                            <div class="invalid-feedback">
+                                Please select a category
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="price" class="form-label">Price</label>
+                            <div class="input-group">
+                                <span class="input-group-text">&#8377;</span>
+                                <input class="form-control" name="listing[price]" type="number" required placeholder="enter price" id="price">
+                                <div class="invalid-feedback">
+                                    Please provide a valid input
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <button class="btn btn-dark add-btn">Add</button>
+                <br><br>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            const hiddenInput = document.getElementById('category');
+
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const selectedValue = e.target.getAttribute('data-value');
+                    document.getElementById('dropdownMenuButton').textContent = selectedValue;
+                    hiddenInput.value = selectedValue;
+                });
+            });
+        });
+    </script>

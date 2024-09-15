@@ -1,0 +1,173 @@
+        body {
+            padding-top: 5rem;
+            font-family: "Plus Jakarta Sans", sans-serif !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .container {
+            flex: 1;
+        }
+        
+        .navbar {
+            height: 5rem;
+            background-color: white;
+        }
+        
+        .fa-compass {
+            color: #fe424d;
+            font-size: 2rem;
+            padding-left: 0.5rem;
+        }
+        
+        .website-name {
+            margin-left: -10px;
+            margin-right: 10px;
+            color: #fe424d;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        
+        .nav-link {
+            color: #222222 !important;
+        }
+        
+        .nav-link:hover {
+            color: #6b6a6a !important;
+        }
+        
+        .index-title:hover {
+            text-decoration: underline;
+        }
+        
+        #filter {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter {
+            text-align: center;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        
+        #filter a {
+            text-decoration: none !important;
+            color: inherit !important;
+        }
+        
+        .filter:hover {
+            opacity: 0.9;
+        }
+        
+        .f-info {
+            background-color: rgb(232, 230, 230);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            height: 8rem;
+        }
+        
+        .f-info-icons a {
+            color: #222222 !important;
+            font-size: 1.2rem;
+        }
+        
+        .f-info-links a {
+            color: #222222;
+            text-decoration: none;
+        }
+        
+        .f-info-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .f-info-icons,
+        .f-info-name,
+        .f-info-links {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .f-info-icons i:hover {
+            opacity: 0.75;
+        }
+        
+        .f-info-links a:hover {
+            opacity: 0.75;
+        }
+        
+        .allListing-list {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        
+        .allListing-list .row {
+            width: 100%;
+        }
+        
+        .card-img-top {
+            width: 100% !important;
+            border-radius: 1rem !important;
+        }
+        
+        .card {
+            margin-bottom: 2rem !important;
+        }
+        
+        .card-home {
+            border: none !important;
+            margin-bottom: 2rem !important;
+        }
+        
+        .card-body-home {
+            padding: 0 !important;
+        }
+        
+        .listing-link {
+            text-decoration: none;
+            margin-bottom: 1rem !important;
+        }
+        
+        .listing-link:hover {
+            opacity: 0.8;
+        }
+        /* footer {
+            position: relative;
+            bottom: 0;
+        } */
+        
+        .add-btn,
+        .edit-btn {
+            background-color: #fe424d !important;
+            border: none !important;
+        }
+        
+        .sign-up {
+            border: none !important;
+        }
+        
+        .edit-btn:hover,
+        .sign-up:hover,
+        .add-btn:hover {
+            opacity: 0.75 !important;
+        }
+        
+        .show-img {
+            height: 40vh;
+        }
+        
+        #map {
+            height: 400px;
+            width: 50vw;
+            margin-bottom: 2rem;
+        }

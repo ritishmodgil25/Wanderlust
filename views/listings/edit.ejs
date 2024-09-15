@@ -1,0 +1,84 @@
+<%- layout('layouts/boilerplate')%>
+    <br>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h3><u>Edit your listing</u>
+            </h3>
+
+            <form method="POST" action="/listings/<%=id%>?_method=PUT" enctype="multipart/form-data">
+
+                <label for="title" class="form-label">Title</label>
+                <input id="title" class="form-control" name="listing[title]" value="<%=list.title%>">
+
+                <label for="description" class="form-label">Description</label>
+                <input id="description" class="form-control" name="listing[description]" value="<%=list.description%>">
+
+                <label for="image" class="form-label">Image</label>
+                <input id="image" class="form-control" type="file" name="listing[image][url]">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="listing[category]">Choose a category</label>
+                            <div class="dropdown">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Select
+                           </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#" data-value="Rooms">Rooms</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="Mountains">Mountains</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="Castle">Castle</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="Pools">Pools</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="Beach">Beach Side</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="Cities">Top cities</a></li>
+                                </ul>
+                            </div>
+                            <input type="hidden" name="listing[category]" id="category" required>
+                            <div class="invalid-feedback">
+                                Please select a category
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+
+                        <label for="price" class="form-label">Price</label>
+                        <div class="input-group">
+                            <span class="input-group-text">&#8377;</span>
+                            <input id="price" type="number" class="form-control" name="listing[price]" value="<%=list.price%>">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="location" class="form-label">Location</label>
+                        <input id="location" class="form-control" name="listing[location]" value="<%=list.location%>">
+                    </div>
+                    <div class="col-md-8">
+                        <label for="country" class="form-label">Country</label>
+                        <input id="country" class="form-control" name="listing[country]" value="<%=list.country%>">
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-primary edit-btn">Edit</button>
+            </form>
+
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            const hiddenInput = document.getElementById('category');
+
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const selectedValue = e.target.getAttribute('data-value');
+                    document.getElementById('dropdownMenuButton').textContent = selectedValue;
+                    hiddenInput.value = selectedValue;
+                });
+            });
+        });
+    </script>
