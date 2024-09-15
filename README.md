@@ -52,26 +52,7 @@ Wanderlust is a web application designed to help users explore and book various 
     ```
 
     The application will start on [http://localhost:3000](http://localhost:3000) by default.
-
-## Usage
-
-- **Exploring Listings**: Navigate to the `/listings` page to view and filter listings.
-- **Creating a Listing**: Use the `/listings/new` route to add a new listing.
-- **Editing a Listing**: Visit the `/listings/:id/edit` route to modify an existing listing.
-- **Viewing a Listing**: Click on any listing to view detailed information and reviews.
-
-## Contributing
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature`).
-3. Make your changes.
-4. Commit your changes (`git commit -am 'Add new feature'`).
-5. Push to the branch (`git push origin feature/your-feature`).
-6. Create a new Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+   
 
 ## Acknowledgements
 
